@@ -12,6 +12,10 @@ import time
 import sys
 import ssl 
 
+import os
+#from dotenv import load_dotenv
+#load_dotenv()
+
 api_key=False
 
 if api_key is False:
@@ -19,7 +23,7 @@ if api_key is False:
     serviceurl = "http://py4e-data.dr-chuck.net/json?"
 # If you have a Google Places API key, enter it here
 else:
-    api_key='AIzaSyAUIjnGJ8Ro4cYePWBUaPA6c4I2YWNKxD8'
+    api_key=os.env.get('API_KEY')
     serviceurl = "https://maps.googleapis.com/maps/api/geocode/json?"
 
 # Ignore SSL certificate errors
